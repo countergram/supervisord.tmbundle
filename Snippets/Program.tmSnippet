@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>[program:$1]
+command = $2
+environment = $3
+autostart = ${4:true}
+autorestart = ${5:true}
+</string>
+	<key>name</key>
+	<string>Program</string>
+	<key>scope</key>
+	<string>source.supervisord-config</string>
+	<key>tabTrigger</key>
+	<string>prog</string>
+	<key>uuid</key>
+	<string>69220ABF-E7D1-4BD4-9F04-64189CD8300B</string>
+</dict>
+</plist>

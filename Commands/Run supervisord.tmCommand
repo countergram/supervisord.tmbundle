@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/bin/bash
+
+esc () {
+STR="$1" ruby &lt;&lt;"RUBY"
+   str = ENV['STR']
+   str = str.gsub(/'/, "'\\\\''")
+   str = str.gsub(/[\\"]/, '\\\\\\0')
+   print "'#{str}'"
+RUBY
+}
+
+osascript &lt;&lt;- APPLESCRIPT
+tell application "iTerm"
+    make new terminal
+    tell the last terminal
+        activate current session
+        launch session "Default Session"
+        tell the last session
+            set name to "Lighttpd from Textmate"
+            write text "cd $(esc ${TM_DIRECTORY}); supervisord -n -c $(esc "${TM_FILEPATH}")"
+        end tell
+    end tell
+end tell
+APPLESCRIPT</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Run supervisord</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.supervisord-config</string>
+	<key>uuid</key>
+	<string>FA4C4CF5-664B-47D9-8B73-70D2D072052A</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Supervisord</string>
+	<key>ordering</key>
+	<array>
+		<string>E024D04B-916E-4DA0-A8F0-BB26790E2D78</string>
+		<string>69220ABF-E7D1-4BD4-9F04-64189CD8300B</string>
+		<string>FFFC81AB-EF72-47D8-A853-9F25B60EFD2F</string>
+	</array>
+	<key>uuid</key>
+	<string>726236F2-714B-49D2-A989-7BDE87D39729</string>
+</dict>
+</plist>
